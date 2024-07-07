@@ -3,10 +3,11 @@ summary: A fibonacci number generator that can support int32 integer requests.
 description: |
   fibby is a command-line tool that can generate the fibonacci number that corresponds to the
   integer provided to the command. It is written in go and is incredibally basic. This application
-  is to allow myself practice on making snaps and writing go.
-version: test
+  is to allow the developer practice on making snaps and writing go.
+version: "v1"
 base: core24
 confinement: strict
+grade: stable
 
 parts:
   fibby:
