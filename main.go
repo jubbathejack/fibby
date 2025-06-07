@@ -21,17 +21,26 @@ func fibSeq(inNum int) *big.Int {
 	return numY
 }
 
+func helpMessage() {
+	fmt.Println("Usage: fibby [options] arg")
+	fmt.Println("Options:")
+	fmt.Println("  -h, --help   Show this help message")
+	fmt.Println("Args:")
+	fmt.Println("  An valid int32 number denoting the sequence number you would like to return.")
+}
+
 func main() {
 
 	help := flag.Bool("h", false, "Show this help message")
 	flag.Parse()
 
+	if len(os.Args) == 1 {
+		helpMessage()
+		return
+	}
+
 	if *help {
-		fmt.Println("Usage: fibby [options] arg")
-		fmt.Println("Options:")
-		fmt.Println("  -h, --help   Show this help message")
-		fmt.Println("Args:")
-		fmt.Println("  An valid int32 number denoting the sequence number you would like to return.")
+		helpMessage()
 		return
 	}
 
